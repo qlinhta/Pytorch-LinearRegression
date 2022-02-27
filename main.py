@@ -15,9 +15,13 @@ n_samples, n_features = X.shape
 
 #1 Model
 
-
+input_size = n_features
+output_size = 1
+model = nn.Linear(input_size, output_size)
 
 #2 Loss & optimizer
+
+
 
 #3 Training loop
 
