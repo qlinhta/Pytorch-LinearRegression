@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 #0 Prepare data
 
-X_numpy, y_numpy = datasets.make_regression(n_samples=100, n_features=1, noise=20, random_state=1)
+X_numpy, y_numpy = datasets.make_regression(n_samples=500, n_features=1, noise=20, random_state=1)
 
 X = torch.from_numpy(X_numpy.astype(np.float32))
 y = torch.from_numpy(y_numpy.astype(np.float32))
@@ -16,7 +16,7 @@ n_samples, n_features = X.shape
 #1 Model
 
 input_size = n_features
-output_size = 1
+output_size = 5
 model = nn.Linear(input_size, output_size)
 
 #2 Loss & optimizer
@@ -26,7 +26,7 @@ optimizer = torch.optim.SGD(model.parameters(), lr = learning_rate)
 
 #3 Training loop
 
-nums_epoch = 100
+nums_epoch = 1000
 for epoch in range(nums_epoch):
     # forward pass and loss
     y_predicted = model(X)
